@@ -31,7 +31,7 @@ services:
       INVERTER_HOST: ${INVERTER_HOST:-192.168.1.100}
       POLL_INTERVAL_MS: ${POLL_INTERVAL_MS:-10000}
     healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://localhost:${SERVER_PORT:-3032}/api/live || exit 1"]
+      test: ["CMD-SHELL", "wget -qO- http://localhost:${SERVER_PORT:-3032}/api/health || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3
